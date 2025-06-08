@@ -1,3 +1,12 @@
 // write a function that reverses a string
 // input is given in as an array of chracters 's'
 // modify the input array 'in-place'
+
+// Input: s = ["h","e","l","l","o"]
+// Output: ["o","l","l","e","h"]
+
+// pseudocode
+// left pointer = first character
+// right pointer = end character
+// use temp to swap the left and right pointers
+// move left & right pointers to the center until then cross each other
