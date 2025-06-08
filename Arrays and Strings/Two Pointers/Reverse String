@@ -1,1 +1,3 @@
-
+// write a function that reverses a string
+// input is given in as an array of chracters 's'
+// modify the input array 'in-place'
