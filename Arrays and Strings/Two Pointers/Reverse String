@@ -10,3 +10,18 @@
 // right pointer = end character
 // use temp to swap the left and right pointers
 // move left & right pointers to the center until then cross each other
+
+// time O(N)
+// space O(1)
+
+class Solution {
+  public void reverseString(char[] s) {
+    int left = 0;
+    int right = s.length - 1;
+    while (left < right) {
+      char temp = s[left];
+      s[left++] = s[right];    // update left's position's value with the right position's value, and then move the left pointer to the right
+      s[right--] = temp;        // update right position's value with temp (left position's value), and then move the right pointer to the left
+    }
+  }
+}
