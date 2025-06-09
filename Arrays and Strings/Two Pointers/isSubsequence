@@ -1,0 +1,15 @@
+// given two Strings 's' and 't',
+// return true if 's' is a subsequence of 't'. return false otherwise
+
+// example s = "ace", t = "abcde"
+
+public boolean isSubsequence(String s, String t) {
+  int i = 0;    // pointer for s
+  int j = 0;    // pointer for t
+
+  while (i < s.length() && i < t.length()) {
+    if (s.charAt(i) == t.charAt(j))  i++;    // if match, pointer for s moves forward
+    j++;    // pointer for t must be moving forward one step in each iteration no matter what
+  }
+  return i == s.length();    // return true if pointer for s has reached the end of String s
+}
