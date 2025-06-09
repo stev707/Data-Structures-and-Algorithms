@@ -1,0 +1,28 @@
+// given two sorted integer arrays arr1 and arr2
+// return a new array that combines both and also sorted
+
+public List<Integer> combine(int[] arr1, int[] arr2) {  // return arrayList
+  List<Integer> result = new ArrayList<>();  // create a new arrayList
+  int i = 0;    // pointer 1 for arr1
+  int j = 0;    // pointer 2 for arr2
+
+  while (i < arr1.length && j < arr2.length) {    // while the both pointers are less than the array length
+    if (arr1[i] < arr2[j]) {    // if arr1's value is less than arr2's value
+      result.add(arr1[i]);      // add that value to the result arrayList
+      i++;  // move the pointer 1 forward
+    }
+    else {
+      result.add(arr2[j]);
+      j++;
+    }
+  // loop ends when one of the pointer reaches the end of the corresponding array (one false condition breaks the loop)
+
+  while (i < arr1.length) {    // if pointer 1 is still within arr1's length
+    result.add(arr1[i]);      // add all remaining arr1's value to the result arrayList
+    i++;
+  }
+  while (j < arr2.length) {    // same logic for pointer 2 and arr2
+    result.add(arr2[j]);
+    j++;
+  }
+  return result;   // return the result arrayList
