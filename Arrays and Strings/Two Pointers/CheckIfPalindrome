@@ -1,1 +1,17 @@
+// given a string "s", return true if it is a palindrome, false otherwise
+// for example, "racecar"
 
+class Solution {
+  public boolean checkIfPalindrome (String s) {    // return boolean, input String s
+    int left = 0;                // left pointer
+    int right = s.length() - 1;  // right pointer
+  
+    while (left < right) {        // until left and right pointer cross over 
+      if (s.charAt(left) != s.charAt(right))  return false;    // if left and right character do not match, return false immediately
+      else
+        left++;    // move left pointer forward
+        right--;   // move right pointer backward
+    }
+    return true;    // if all left and right characters match until the cross over point, then return true
+  }
+}
