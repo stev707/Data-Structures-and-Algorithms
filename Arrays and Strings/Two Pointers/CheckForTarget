@@ -1,0 +1,28 @@
+// given a sorted array of unique integers and a target number
+// return true if there exists a "pair" of numbers that sum to target, false otherwise
+// similar to "Two Sum" problem
+
+// For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return true because 4 + 9 = 13.
+
+// brute force - iterate over all pairs --> O(n^2)
+// two pointers --> O(n)
+
+// this algorithm works because the array is "sorted"
+// if x + y > target; (x = left pointer, y = right pointer), must decrease y because x can only increase.
+// if x + y < target, must increase x as y can only decrease
+
+class Solution {
+  public boolean checkForTarget(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length - 1;      // array use length 
+    
+    while (left < right) {
+      int sum = nums[left] + nums[right];    // current sum; re-calculate sum at the start of each loop
+      if (sum > target) right--;    // if sum is greater than target, must move the right pointer to the left
+      else if (sum < targer) left++;
+      else return true;            // if sum == target, return true
+    }
+    return false;    // if went through all pairs and the no sum equaled the target, return false as there are no matching pairs
+  }
+}
+    
