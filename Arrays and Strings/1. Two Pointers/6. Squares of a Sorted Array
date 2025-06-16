@@ -20,8 +20,8 @@ class Solution {
         square = nums[right--];    // nums[right] becomes the value for square. Then move the right pointer to the left
       else
         int square = nums[left++];  // else, nums[left] becomes the value for the square. Then move the left pointer to the right
+      result[i] = square * square;
     }
-    result[i] = square * square;
+    return result;  // return the array of the squares in non-decreasing order
   }
-  return result;  // return the array of the squares in non-decreasing order
 }
