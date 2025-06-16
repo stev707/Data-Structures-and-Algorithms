@@ -19,7 +19,7 @@ class Solution {
     while (left < right) {
       int sum = nums[left] + nums[right];    // current sum; re-calculate sum at the start of each loop
       if (sum > target) right--;    // if sum is greater than target, must move the right pointer to the left
-      else if (sum < targer) left++;
+      else if (sum < target) left++;
       else return true;            // if sum == target, return true
     }
     return false;    // if went through all pairs and the no sum equaled the target, return false as there are no matching pairs
