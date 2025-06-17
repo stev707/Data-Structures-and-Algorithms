@@ -6,7 +6,7 @@
 // Time O(n); all work inside for loop is amortized O(1)
 // Space O(1); only use 3 integer variables
 
-public int findMaxSubarrayLength(int[] nums, int k) {
+public int findMaxSumLength(int[] nums, int k) {
     int left = 0;   // left pointer
     int curr = 0;   // current sum of the window
     int ans = 0;    // to keep track of the maximum possible length
