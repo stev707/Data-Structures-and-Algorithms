@@ -16,5 +16,5 @@ public int findLargestSumFixedWidth(int[] nums, int k) {
         curr += nums[i] - nums[i - k];  // add the next element (starts at k index) and remove the first place element
         ans = Math.max(ans, curr);  // update the answer
     }
-    return ans;
+    return ans; // return the largest sum
 }
